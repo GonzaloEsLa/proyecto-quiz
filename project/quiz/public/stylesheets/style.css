@@ -8,6 +8,7 @@
 /* Incluimos fuentes tipograficas  de Google fonts y de iconos Awesome font */
 @import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
 
 
 
@@ -37,17 +38,20 @@ h3{font-weight: 600;}
 
 header, nav, section { background: #eee; text-align: left;}
 header, footer{height: 20%;}
-nav, section{height: 60%;  line-height: 3em;}
+nav, section{height: auto;  line-height: 3em;}
 
 header{
     box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.3);
     margin-bottom: 20px !important;
     color: #fff !important;
     background-color: #4F70A2;
-    font-weight: 100;
+    font-family: 'Oleo Script', cursive;
 }
 
-header h2 span{color: #89B7FC;}
+header h2 span{
+       color: #89B7FC;  
+       font:  21px 'Raleway', sans-serif;
+}
 
 
 
@@ -145,7 +149,7 @@ footer a:hover{
             section   { 
                 float: right; 
                 width: 70%; 
-                height: 200px; 
+                height: auto; 
                 box-shadow: 5px 5px 5px -4px rgba(0, 0, 0, 0.3);
                 margin-right: 2%;
             }
@@ -185,6 +189,19 @@ footer a:hover{
                 border-radius: 2px;
                 cursor: pointer;
             }
+         
+            .author{
+                border: 3px dashed #FFF;
+                border-radius: 100%;
+                height: 7em;
+                float: left;
+            }
+            
+           .info-author{
+               float: left; 
+               margin-left: 3em; 
+               font-size: 1em !important; 
+           }
     
 }
 
@@ -306,6 +323,20 @@ footer a:hover{
             cursor: pointer;
             width: 96%;
         }
+    
+        .author{
+                border: 3px dashed #FFF;
+                border-radius: 100%;
+                height: 8em;
+                display: inline-block;
+            }
+            
+        .info-author{
+               margin-left: 1em; 
+               font-size: 0.8em !important; 
+               line-height: 3em;
+            clear: both;
+           }
     
       
     
