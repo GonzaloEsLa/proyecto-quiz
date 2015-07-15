@@ -8,6 +8,7 @@
 /* Incluimos fuentes tipograficas  de Google fonts y de iconos Awesome font */
 @import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
 
 
 
@@ -44,10 +45,13 @@ header{
     margin-bottom: 20px !important;
     color: #fff !important;
     background-color: #4F70A2;
-    font-weight: 100;
+    font-family: 'Oleo Script', cursive;
 }
 
-header h2 span{color: #89B7FC;}
+header h2 span{
+       color: #89B7FC;  
+       font:  21px 'Raleway', sans-serif;
+}
 
 
 
