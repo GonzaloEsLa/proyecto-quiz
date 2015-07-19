@@ -69,8 +69,8 @@ nav span:last-child{ border-bottom: 0;}
 
 
  input[type="submit"]:hover{ 
-            background-color: #484848;
-            border-bottom-color: #484848;
+            background-color: #5F5F5F;
+            border-bottom-color: #393939;
     }
 
 input[type="text"]:hover{

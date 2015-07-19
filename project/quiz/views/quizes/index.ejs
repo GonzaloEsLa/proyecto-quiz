@@ -1,4 +1,14 @@
- 
+
+<form method="get" action="/quizes">
+        
+            <input type="text" name="search" placeholder="Buscar pregunta ..."/>
+            <input  type="submit" value="Buscar">
+</form>
+   
+
+<br>
+    
+     
 <table>
      
        <!-- mostramos la lista de preguntas disponibles -->
@@ -6,7 +16,8 @@
            
            <tr>
             
-                <td>
+                <td>  
+                      <i class="fa fa-angle-double-right" style="margin-right:20px;"></i>
                       <a href="quizes/<%= quizes[i].id %>">   <%= quizes[i].pregunta %>  </a>
                 </td>
                

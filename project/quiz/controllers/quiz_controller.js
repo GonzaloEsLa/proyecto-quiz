@@ -21,19 +21,44 @@ exports.load = function(req, res, next, quizId) {
 
 
 
-// GET /quizes
-exports.index = function(req, res) {  
+// GET /quizes  y / quizes?searh
+exports.index = function(req, res){
  
-      var options = {};
+   //Busqueda de pregunta
+   if(req.query.search) {
+        
+             var filtro  = (req.query.search || '').replace(" ", "%");
+            
+             models.Quiz.findAll({where:["pregunta like ?", '%'+filtro+'%'],order:'pregunta ASC'}).then(function(quizes){
+                   res.render('quizes/index', {quizes: quizes});
+             }).catch(function(error) { next(error);});
+   
+       
+   //Mostrar todas las preguntas
+   } else {
+
+           models.Quiz.findAll().then(function(quizes){
+               res.render('quizes/index', {quizes: quizes});
+           }).catch(function(error) { next(error);});
+  }
+};
 
 
-      models.Quiz.findAll(options).then(
-      
-        function(quizes) {
-          res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+
+
+
+
+// GET /quizes/?search
+exports.search= function(req, res) {
+   
+    var search  = (req.query.search || '').replace(" ", "%");
+    
+    models.Quiz.findAll({where: ["pregunta like ?", search]}).then(
+        
+        function(quizes_search){
+              res.render('quizes/search.ejs', { quizes_search: req.quizes_search});
         }
-          
-      ).catch(function(error){next(error)});
+    );
 };
 
 
