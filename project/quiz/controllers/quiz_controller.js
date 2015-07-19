@@ -22,12 +22,20 @@ exports.load = function(req, res, next, quizId) {
 
 
 // GET /quizes
-exports.index= function(req, res) {
-   
-    models.Quiz.findAll().then(function(quizes){
-              res.render('quizes/index.ejs', { quizes: quizes});
-    });
+exports.index = function(req, res) {  
+ 
+      var options = {};
+
+
+      models.Quiz.findAll(options).then(
+      
+        function(quizes) {
+          res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+        }
+          
+      ).catch(function(error){next(error)});
 };
+
 
 
 
