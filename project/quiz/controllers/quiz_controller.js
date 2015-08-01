@@ -84,8 +84,42 @@ exports.answer= function(req, res) {
            
      res.render('quizes/answer', { quiz: req.quiz, respuesta: resultado });
         
-    
-    
-    
 };
+
+
+
+// GET /quizes/new
+exports.new= function(req, res) {
+    
+    
+    var quiz = models.Quiz.build({  // cReamos un objeto quiz nuevo
+        
+        pregunta: "pregunta", respuesta: "respuesta"
+    });
+        
+  
+    res.render('quizes/new', {quiz: quiz});
+        
+};
+
+
+
+
+
+
+// POST /quizes/create
+exports.create= function(req, res) {
+    
+    
+    var quiz = models.Quiz.build(req.body.quiz);  // creamos un objeto quiz nuevo
+    
+    // Guardar en DB los campos de la pregunta 
+    quiz.save({ fileds: ["pregunta", "respuesta"]}).then(function(){
+    
+          res.redirect('/quizes'); // redireccion http a las preguntas
+    });
+    
+        
+};
+
 

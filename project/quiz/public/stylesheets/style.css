@@ -83,6 +83,17 @@ a{
     color: #0181B4;
 }
 
+.enlace-boton{
+    border: 1px solid #2FA6D5;
+    padding: 15px 20px;
+    border-radius: 3px;
+}
+
+.enlace-boton:hover{
+    border: 1px solid #484848;
+}
+
+
 a:hover{
     color:  #484848;
 }
