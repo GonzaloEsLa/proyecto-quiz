@@ -93,6 +93,17 @@ a{
     border: 1px solid #484848;
 }
 
+.mensaje-error{
+    background-color: #C84C4C;
+    color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.3);
+    line-height: 2em;
+    padding: 0.7em 1em;
+    font-size: 0.95em;
+    margin-bottom: 2em;
+}
+
 
 a:hover{
     color:  #484848;

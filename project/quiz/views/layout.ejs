@@ -23,6 +23,9 @@
                </header>
                
                
+               
+               
+               
                <nav class="main" id="n1" role="navigation">
                    <span>
                           <a href="/"><i class="fa fa-list-ul"></i>&nbsp;&nbsp;&nbsp;&nbsp; Inicio</a>
@@ -39,16 +42,38 @@
                </nav>
                
                
+               
+               
+               
                <section class="main" id="s1">
-                   <%- body %>
+                     
+                        
+                         
+                         <% if(errors.length){ %>
+                        
+                         <!-- Notifcacion de errroes si los hay -->
+                                 <div class="mensaje-error">
+                                      
+                                        <% errors.forEach(function(error){ %>
+                                              <i class="fa fa-times"></i> &nbsp;&nbsp; <%= error.message %>.<br>
+                                        <% }) %>
+                                        
+                                 </div>
+                         <% } %>
+                           
+                         <div><%- body %></div>
+                       
                </section>
                
                
                
+               
                <footer class="main" id="f1">
+                  
                    <i id="responsive" class="fa fa-expand"></i>
                    <a href="https://es.wikipedia.org/wiki/Quiz" target="_new">¿Que es un Quiz?</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
                 App alojada en <i class="fa fa-github"></i>&nbsp;<a href="https://github.com/GonzaloEsLa/proyecto-quiz-I" target="_new">GitHub</a><br>
+                
                </footer>
                
                    

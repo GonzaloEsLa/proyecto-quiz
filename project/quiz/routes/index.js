@@ -4,14 +4,14 @@ var quizController = require('../controllers/quiz_controller');
 
 
 
-//Pagina de inicio (home)
+//Pagina de inicio (/home)
 router.get('/', function(req, res) {
-    res.render('index', { title: 'Quiz' });
+    res.render('index', { title: 'Quiz',  errors: [] });
 });
 
 //Pagina de creditos
 router.get('/author', function(req, res) {
-    res.render('author', {});
+    res.render('author', { errors: []});
 });
 
 //Autoload de comandos con :quizId
@@ -22,6 +22,7 @@ router.param('quizId', quizController.load);
 router.get('/quizes', quizController.index);  // muestra todas las preguntas y  busqueda de preguntas
 router.get('/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
+
 //Crear preguntas
 router.get('/quizes/new', quizController.new); 
 router.post('/quizes/create', quizController.create); 
